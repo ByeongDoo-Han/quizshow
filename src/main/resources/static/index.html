@@ -12,34 +12,35 @@
 </header>
 <nav>
     <ul>
-        <li><a href="#">홈</a></li>
-        <li><a href="#">랭킹</a></li>
+        <li><a href="/">홈</a></li>
     </ul>
     <form>
-        <label>
-            <input type="text" placeholder="검색어 입력">
-        </label>
-        <button>검색</button>
+        <nav>
+            <ul>
+                <li><button><a class="button-link" href="resultPage.html" >결과보기</a></button></li>
+                <li><button id="clear"  >점수초기화</button></li>
+            </ul>
+        </nav>
     </form>
 </nav>
 <main>
     <div class = "button-container">
-        <div class="quiz-link" onclick="location.href='quizcontroller.html'">
+        <div class="quiz-link" onclick="location.href='speed1.html'">
             <h2>스피드 퀴즈</h2>
             <p>빠르고 정확하게 문제를 풀어주세요.</p>
         </div>
-        <div class="quiz-link" onclick="location.href='#'">
-            <h2>낱말 퀴즈</h2>
-            <p>빈칸 안에 들어갈 낱말을 유추해서 문제를 풀어주세요.</p>
+        <div class="quiz-link" onclick="location.href='word1.html'">
+            <h2>초성 퀴즈</h2>
+            <p>초성을 보고 알맞은 낱말을 맞춰주세요.</p>
         </div>
-        <div class="quiz-link" onclick="location.href='#'">
+        <div class="quiz-link" onclick="location.href='sense1.html'">
             <h2>상식 퀴즈</h2>
-            <p>당신의 상식 수준이 탄로납니다.</p>
+            <p>당신의 상식을 확인해보세요.</p>
         </div>
     </div>
 </main>
 <footer>
-    &copy; 2023.12.16. 듀퀴즈. All rights reserved.
+    <p> &copy; 2023.12.16. 듀퀴즈. All rights reserved. </p>
 </footer>
 </body>
 </html>

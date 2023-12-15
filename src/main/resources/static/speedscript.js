@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("clear").addEventListener("click", function () {
-        localStorage.clear();
-    });
+
     // var zero = localStorage.getItem(Object.keys(localStorage)[0]);
     // var one = localStorage.getItem(Object.keys(localStorage)[1]);
     // var two = localStorage.getItem(Object.keys(localStorage)[2]);
@@ -65,3 +63,4 @@ function submit(){
     localStorage.setItem(name, score + 1);
     console.log(localStorage);
 }
+

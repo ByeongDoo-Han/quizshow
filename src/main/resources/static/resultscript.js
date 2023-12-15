@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("clear").addEventListener("click", function () {
-        localStorage.clear();
-    });
+
     // var zero = localStorage.getItem(Object.keys(localStorage)[0]);
     // var one = localStorage.getItem(Object.keys(localStorage)[1]);
     // var two = localStorage.getItem(Object.keys(localStorage)[2]);
@@ -24,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // document.getElementById("one").innerText = one;
 
 });
+function clear(){
+    document.getElementById("clear").addEventListener("click", function () {
+        localStorage.clear();
+    });
+}
 function refresh(){
     document.getElementById("one").innerText ="";
     Object.keys(localStorage).forEach(function(key) {
@@ -34,19 +37,25 @@ function refresh(){
         document.getElementById("one").append(`${key}: ${value}\n`);
     });
 }
+
 function refresh2(){
-    const storedData = Object.keys(localStorage).map(key => {
+    let oldstoredData = Object.keys(localStorage).map(key => {
         return { key: key, value : localStorage.getItem(key)};
     });
-    console.log(storedData);
-    // storedData.sort((a,b) => a.key.localeCompare(b.value));
-    // const sortedDataDiv = document.getElementById("one");
-    // sortedDataDiv.forEach(item => {
-    //     const p = document.createElement('p');
-    //     p.append(`${item.key} : ${item.value}`);
-    //     sortedDataDiv.appendChild(p);
-    // });
-}
+    console.log(oldstoredData);
+    if (oldstoredData !== null && oldstoredData !== undefined) {
+        let storedData = oldstoredData.sort((a, b) => b.key.localeCompare(a.value));
+        const sortedDataDiv = document.getElementById("one");
+        storedData.forEach(item => {
+            const p = document.createElement('p');
+            p.textContent = `${item.key} : ${item.value}`;
+            sortedDataDiv.appendChild(p);
+        });
+    }else{
+        console.log('sorted data is undefined')
+    }
+};
+
 function toSpeed2(){
 
 }
@@ -54,14 +63,4 @@ function toSpeed2(){
 function toResult(){
     window.location.href="resultPage.html";
 }
-function submit(){
-    var name = document.getElementById("answer-member").value;
-    console.log(name);
-    if (localStorage.getItem(name) == null) {
-        var score = 0;
-    } else {
-        score = parseInt(localStorage.getItem(name)) || 0;
-    }
-    localStorage.setItem(name, score + 1);
-    console.log(localStorage);
-}
+

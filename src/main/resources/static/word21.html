@@ -8,14 +8,14 @@
     <script>
         function openanswer(){
             const p = document.createElement('h1');
-            p.textContent = '정답 : API';
+            p.textContent = '정답 : 포스트그레스큐엘(PostgreSQL)';
             document.getElementById("answer").appendChild(p);
         }
     </script>
 </head>
 <body>
 <header>
-    <h1>스피드 퀴즈</h1>
+    <h1>초성 퀴즈</h1>
     <nav>
         <ul>
             <li><a href="index.html">홈</a></li>
@@ -24,12 +24,10 @@
 </header>
 
 <main>
-    <h2>첫번째 문제</h2>
-    <h2> 자바 진영에서 ORM(Object-Relational Mapping) 기술 표준으로 사용되는 인터페이스의 모음</h2>
-
-    <form>
-
-    </form>
+    <div>
+        <h2>스물한번째 문제(+2점)</h2>
+        <h2>ㅍㅅㅌㄱㄹㅅㅋㅇ</h2>
+    </div>
     <div>
         <input id="answer-member" type="text" placeholder="정답자 이름을 입력하세요">
     </div>
@@ -37,11 +35,12 @@
     <div id="answer"></div>
     <button onclick="openanswer()">정답확인</button>
     <button onclick="submit()">제출하기</button>
-    <button><a href="speed2.html">다음 문제로</a></button>
+    <button><a href="word20.html">이전 문제로</a></button>
+
 </main>
 
 <footer>
-    <p> &copy; 2023.12.16. 듀퀴즈. All rights reserved. </p>
+    <p>&copy; 2023.12.16. 듀퀴즈. All rights reserved.</p>
 </footer>
 </body>
 </html>
